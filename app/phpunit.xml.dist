@@ -23,6 +23,11 @@
         <!-- DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7" -->
         <env name="DATABASE_URL" value="postgresql://symfony:ChangeMe@127.0.0.1:5432/app?serverVersion=13&amp;charset=utf8"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
+
+        <!-- ###+ symfony/framework-bundle ### -->
+        <env name="APP_ENV" value="dev"/>
+        <env name="APP_SECRET" value="5a5d9dc5298944720cdb5c0a62128df6"/>
+        <!-- ###- symfony/framework-bundle ### -->
     </php>
 
     <testsuites>
