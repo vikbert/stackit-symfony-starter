@@ -22,7 +22,7 @@ start: ## start the application
 	open http://localhost
 
 #-- db
-db-reset: ## reset the db
+db-reset: ## clean up the database and apply the migration
 	make db-clean
 	make db-migrate
 
