@@ -9,8 +9,10 @@ help:
 
 #-- project
 init: ## init symfony project 5.4
+	rm -rf ./app
 	docker-compose run --rm php composer create-project symfony/skeleton . --no-interaction
 	cp docs/templates/* app/
+	cp docs/templates/.env.local app/.env.local
 
 start: ## start the application
 	make docker-clean
