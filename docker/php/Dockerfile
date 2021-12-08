@@ -1,57 +1,66 @@
-FROM alpine:3.13.5
+FROM alpine:3.14
 
-RUN apk add --update \
-    php7-amqp \
-    php7-apcu \
-    php7-ctype \
-    php7-curl \
-    php7-dom \
-    php7-fileinfo\
-    php7-fpm \
-    php7-gd \
-    php7-iconv \
-    php7-imagick \
-    php7-intl \
-    php7-json \
-    php7-mbstring \
-    php7-mcrypt \
-    php7-mysqli \
-    php7-opcache \
-    php7-openssl \
-    php7-pcntl \
-    php7-pdo \
-    php7-pdo_pgsql \
-    php7-pdo_sqlite \
-    php7-phar \
-    php7-session \
-    php7-simplexml \
-    php7-soap \
-    php7-sodium \
-    php7-tokenizer \
-    php7-xdebug \
-    php7-xml \
-    php7-xmlreader \
-    php7-xmlwriter \
-    php7-zip \
-    php7-zlib \
-    php7-posix \
-    php7-pcntl \
-    make \
-    curl
+RUN apk --no-cache add \
+  curl \
+  nginx \
+  php8 \
+  php8-ctype \
+  php8-curl \
+  php8-dom \
+  php8-fpm \
+  php8-gd \
+  php8-intl \
+  php8-iconv \
+  php8-json \
+  php8-mbstring \
+  php8-pdo_pgsql \
+  php8-pdo_sqlite \
+  php8-mysqli \
+  php8-opcache \
+  php8-openssl \
+  php8-phar \
+  php8-session \
+  php8-tokenizer \
+  php8-xml \
+  php8-xmlreader \
+  php8-zlib \
+  supervisor
 
-COPY --from=composer:1.10 /usr/bin/composer /usr/bin/composer
-
+# Create symlink so programs depending on `php` still function
+RUN ln -s /usr/bin/php8 /usr/bin/php
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN composer self-update --2 && rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
-ADD symfony.ini /etc/php7/conf.d/
-ADD symfony.ini /etc/php7/cli/conf.d/
-ADD xdebug.ini  /etc/php7/conf.d/90_xdebug.ini
+# Configure nginx
+COPY php8-config/nginx.conf /etc/nginx/nginx.conf
 
-ADD symfony.pool.conf /etc/php7/php-fpm.d/
+# Configure PHP-FPM
+COPY php8-config/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
+COPY php8-config/php.ini /etc/php8/conf.d/custom.ini
 
-CMD ["php-fpm7", "-F"]
+# Configure supervisord
+COPY php8-config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-#ENV SYMFONY_PHPUNIT_VERSION=8.3
+# Setup document root
+RUN mkdir -p /var/www
 
+# Make sure files/folders needed by the processes are accessable when they run under the nobody user
+RUN chown -R nobody.nobody /var/www && \
+  chown -R nobody.nobody /run && \
+  chown -R nobody.nobody /var/lib/nginx && \
+  chown -R nobody.nobody /var/log/nginx
+
+# Switch to use a non-root user from here on
+USER nobody
+
+# Add application
 WORKDIR /var/www
-EXPOSE 9001
+
+# Expose the port nginx is reachable on
+EXPOSE 8080
+
+# Let supervisord start nginx & php-fpm
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+
+# Configure a healthcheck to validate that everything is up&running
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping

@@ -19,6 +19,7 @@ start: ## start the application
 	docker-compose up -d
 	sleep 5
 	docker-compose exec php composer install
+	make db-clean
 	open http://localhost
 
 #-- db
@@ -40,3 +41,4 @@ docker-clean: ## clean up all docker resource
 	docker image prune -f
 	docker volume prune -f
 	docker network prune -f
+	docker rmi base-alpine-php:8.0 -f
