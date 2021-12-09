@@ -61,6 +61,22 @@ go to [http://localhost](http://localhost)
 png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main
 &resolveLfs=true&%24format=octetStream&api-version=5.0" alt="symfony 5" width="800px">
 
+## 🎮 Scripts & Command
+Type `make` in terminal
+
+```bash
+# shellcheck disable=SC2046
+project
+ init                                        init symfony project
+ start                                       start the application
+db
+ db-reset                                    reset the db
+ db-clean                                    clean the db
+ db-migrate                                  doctrine migrate
+docker
+ docker-clean                                clean up all docker resource
+```
+
 ## 🔥 Problems
 Check the VPN configuration and `proxifier`, if you have the following SSL certificate problem.
 ```bash
