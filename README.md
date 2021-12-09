@@ -28,13 +28,14 @@ read the official documentation to learn how to install symfony <https://symfony
 > `symfony 6` in `php-8` feature branch.
 ```
 cd starter-symfony-docker
-// default: main branch with PHP7 and Symfony 5.4
+// switch to main branch: PHP7 and Symfony 5.4
+git checkout php-8
 make init
 make start
 
 
-// switch to php-8 branch
-// php-8 branch with PHP8 and Symfony 6
+// switch to php-8 branch: PHP8 and Symfony 6
+git checkout php-8
 make init
 make start
 ```
