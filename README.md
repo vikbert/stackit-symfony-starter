@@ -21,7 +21,7 @@ png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0
 
 ---
 
-## Starting started 
+## 🚀 Starting started 
 read the official documentation to learn how to install symfony <https://symfony.com/download>.
 > `make init` is going to initialize an application with symfony. Be sure that you have already started `Proxifier` 
 > client. Based on the feature branch you selected, `make init` will initialize `symfony 5.4` in `main` branch, and 
@@ -39,7 +39,7 @@ make init
 make start
 ```
 
-## Localhost URL
+## ✅ Localhost
 
 go to [http://localhost](http://localhost)
 
@@ -48,9 +48,17 @@ go to [http://localhost](http://localhost)
 png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main
 &resolveLfs=true&%24format=octetStream&api-version=5.0" alt="symfony 5" width="800px">
 
+## 🔥 Problems
+Check the VPN configuration and `proxifier`, if you have the following SSL certificate problem.
+```bash
+Creating a "symfony/skeleton" project at "./"
 
+  [Composer\Downloader\TransportException]
+  curl error 60 while downloading https://repo.packagist.org/packages.json: SSL certificate problem: unable to get lo
+  cal issuer certificate
+```
 
-## licence
+##  licence
 [apache-2.0](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Maintainer

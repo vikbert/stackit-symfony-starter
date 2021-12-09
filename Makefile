@@ -18,7 +18,6 @@ start: ## start the application
 	make docker-clean
 	docker-compose up -d
 	sleep 5
-	docker-compose exec php composer install
 	open http://localhost
 
 #-- db
