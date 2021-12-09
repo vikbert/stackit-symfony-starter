@@ -8,7 +8,7 @@ help:
 .DEFAULT_GOAL := help
 
 #-- project
-init: ## init symfony project 5.4
+init: ## init symfony skeleton project
 	rm -rf ./app
 	docker-compose run --rm php composer create-project symfony/skeleton . --no-interaction
 	cp docs/templates/* app/
