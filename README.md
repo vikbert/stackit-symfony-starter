@@ -29,7 +29,7 @@ read the official documentation to learn how to install symfony <https://symfony
 ```
 cd starter-symfony-docker
 // switch to main branch: PHP7 and Symfony 5.4 skeleton project 
-git checkout php-8
+git checkout main
 make init
 make start
 
