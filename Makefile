@@ -18,10 +18,11 @@ start: ## start the application
 	make docker-clean
 	docker-compose up -d
 	sleep 5
+	docker-compose exec php composer install
 	open http://localhost
 
 #-- db
-db-reset: ## clean up the database and apply the migration
+db-reset: ## reset the db
 	make db-clean
 	make db-migrate
 
@@ -39,3 +40,4 @@ docker-clean: ## clean up all docker resource
 	docker image prune -f
 	docker volume prune -f
 	docker network prune -f
+	docker rmi base-alpine-php:8.0 -f
