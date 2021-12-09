@@ -17,8 +17,8 @@ init: ## init symfony project 5.4
 start: ## start the application
 	make docker-clean
 	docker-compose up -d
-	sleep 5
 	docker-compose exec php composer install
+	sleep 5
 	make db-clean
 	open http://localhost
 

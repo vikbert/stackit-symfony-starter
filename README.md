@@ -38,6 +38,14 @@ make start
 git checkout php-8
 make init
 make start
+
+// ⚠️ How to use another invidual symfony project
+// for example: use the symfony demo web project: https://github.com/symfony/demo.git
+git stash
+git checkout php-8
+rm -rf app/.* app/*
+git clone https://github.com/symfony/demo.git app
+make start
 ```
 
 ## ✅ Localhost

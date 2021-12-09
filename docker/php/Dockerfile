@@ -1,30 +1,32 @@
 FROM alpine:3.14
 
 RUN apk --no-cache add \
-  curl \
-  nginx \
-  php8 \
-  php8-ctype \
-  php8-curl \
-  php8-dom \
-  php8-fpm \
-  php8-gd \
-  php8-intl \
-  php8-iconv \
-  php8-json \
-  php8-mbstring \
-  php8-pdo_pgsql \
-  php8-pdo_sqlite \
-  php8-mysqli \
-  php8-opcache \
-  php8-openssl \
-  php8-phar \
-  php8-session \
-  php8-tokenizer \
-  php8-xml \
-  php8-xmlreader \
-  php8-zlib \
-  supervisor
+    curl \
+    nginx \
+    php8 \
+    php8-ctype \
+    php8-curl \
+    php8-dom \
+    php8-fpm \
+    php8-gd \
+    php8-intl \
+    php8-iconv \
+    php8-json \
+    php8-mbstring \
+    php8-pdo_pgsql \
+    php8-pdo_sqlite \
+    php8-mysqli \
+    php8-opcache \
+    php8-openssl \
+    php8-phar \
+    php8-session \
+    php8-tokenizer \
+    php8-xml \
+    php8-xmlreader \
+    php8-xmlwriter \
+    php8-simplexml \
+    php8-zlib \
+    supervisor
 
 # Create symlink so programs depending on `php` still function
 RUN ln -s /usr/bin/php8 /usr/bin/php
@@ -46,9 +48,9 @@ RUN mkdir -p /var/www
 
 # Make sure files/folders needed by the processes are accessable when they run under the nobody user
 RUN chown -R nobody.nobody /var/www && \
-  chown -R nobody.nobody /run && \
-  chown -R nobody.nobody /var/lib/nginx && \
-  chown -R nobody.nobody /var/log/nginx
+    chown -R nobody.nobody /run && \
+    chown -R nobody.nobody /var/lib/nginx && \
+    chown -R nobody.nobody /var/log/nginx
 
 # Switch to use a non-root user from here on
 USER nobody
