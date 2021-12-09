@@ -15,11 +15,8 @@ init: ## init symfony project 5.4
 	cp docs/templates/.env.local app/.env.local
 
 start: ## start the application
-	make docker-clean
 	docker-compose up -d
 	docker-compose exec php composer install
-	sleep 5
-	make db-clean
 	open http://localhost
 
 #-- db
