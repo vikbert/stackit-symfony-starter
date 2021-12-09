@@ -7,7 +7,7 @@ png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0
 </div>
 
 <div align="center">
-  <p>Symfony 5.4 + Nginx + PHP-FPM + Docker Alpine </p>
+  <p>Symfony 5/6 + Nginx + PHP-FPM + Docker Alpine </p>
 
   <p>
     <a href="#">
@@ -23,10 +23,18 @@ png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0
 
 ## Starting started 
 read the official documentation to learn how to install symfony <https://symfony.com/download>.
-> `make init` is going to initialize an application with symfony 5.4. Be sure that you have already started `Proxifier` 
-> client.
+> `make init` is going to initialize an application with symfony. Be sure that you have already started `Proxifier` 
+> client. Based on the feature branch you selected, `make init` will initialize `symfony 5.4` in `main` branch, and 
+> `symfony 6` in `php-8` feature branch.
 ```
 cd starter-symfony-docker
+// default: main branch with PHP7 and Symfony 5.4
+make init
+make start
+
+
+// switch to php-8 branch
+// php-8 branch with PHP8 and Symfony 6
 make init
 make start
 ```
@@ -39,6 +47,8 @@ go to [http://localhost](http://localhost)
 -42ba-810d-5cac3de6a97f/items?path=/docs/sf5.
 png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main
 &resolveLfs=true&%24format=octetStream&api-version=5.0" alt="symfony 5" width="800px">
+
+
 
 ## licence
 [apache-2.0](https://choosealicense.com/licenses/apache-2.0/)
