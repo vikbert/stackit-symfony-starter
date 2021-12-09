@@ -7,7 +7,7 @@ png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0
 </div>
 
 <div align="center">
-  <p>Symfony 5/6 + Nginx + PHP-FPM + Docker Alpine </p>
+  <p>The minimal docker starter with Symfony 5/6 + Nginx + PHP-FPM + Docker Alpine </p>
 
   <p>
     <a href="#">
@@ -28,6 +28,7 @@ read the official documentation to learn how to install symfony <https://symfony
 > `symfony 6` in `php-8` feature branch.
 ```
 cd starter-symfony-docker
+
 // switch to main branch: PHP7 and Symfony 5.4 skeleton project 
 git checkout main
 make init
@@ -40,7 +41,7 @@ make init
 make start
 
 // How to use another invidual symfony project
-// for example: use the symfony demo project (https://github.com/symfony/demo.git)
+// for example: use the symfony demo project (https://github.com/symfony/demo.git), that requires PHP8
 git stash
 git checkout php-8
 rm -rf app/.* app/*
