@@ -40,7 +40,7 @@ make init
 make start
 
 // ⚠️ How to use another invidual symfony project
-// for example: use the ssomoc example project: https://bitbucket.schwarz/scm/~zhoux/ssomoc.git
+// for example: use the symfony demo project: https://github.com/symfony/demo.git
 git stash
 git checkout php-8
 rm -rf app/.* app/*
