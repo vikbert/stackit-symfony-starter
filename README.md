@@ -28,19 +28,19 @@ read the official documentation to learn how to install symfony <https://symfony
 > `symfony 6` in `php-8` feature branch.
 ```
 cd starter-symfony-docker
-// switch to main branch: PHP7 and Symfony 5.4
+// switch to main branch: PHP7 and Symfony 5.4 skeleton project 
 git checkout php-8
 make init
 make start
 
 
-// switch to php-8 branch: PHP8 and Symfony 6
+// switch to php-8 branch: PHP8 and Symfony 6 skeleton project
 git checkout php-8
 make init
 make start
 
-// ⚠️ How to use another invidual symfony project
-// for example: use the symfony demo project: https://github.com/symfony/demo.git
+// How to use another invidual symfony project
+// for example: use the symfony demo project (https://github.com/symfony/demo.git)
 git stash
 git checkout php-8
 rm -rf app/.* app/*
