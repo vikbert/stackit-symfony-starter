@@ -92,3 +92,5 @@ Creating a "symfony/skeleton" project at "./"
 
 ## Maintainer
 [xun.zhou@mail.schwarz](https://vikbert.github.io/)
+
+## PR welcome
