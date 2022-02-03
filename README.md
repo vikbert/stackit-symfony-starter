@@ -76,6 +76,15 @@ db
 docker
  docker-clean                                clean up all docker resource
 ```
+## xdebug
+To start xdebug with any request, change the boolean to `yes` like the following
+```bash
+xdebug.start_with_request = no
+```
+then rebuild the image and docker
+```bash
+make docker-clean
+```
 
 ## 🔥 Problems
 Check the VPN configuration and `proxifier`, if you have the following SSL certificate problem.
