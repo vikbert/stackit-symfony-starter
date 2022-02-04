@@ -7,7 +7,7 @@ png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0
 </div>
 
 <div align="center">
-  <p>The minimal docker starter with Symfony 5/6 + Nginx + PHP-FPM + Docker Alpine </p>
+  <p>Symfony 5/6 + Nginx + PHP-FPM + Docker Alpine </p>
 
   <p>
     <a href="#">
@@ -21,27 +21,26 @@ png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0
 
 ---
 
-## 🚀 Starting started 
+## 🚀 Starting started
 read the official documentation to learn how to install symfony <https://symfony.com/download>.
-> `make init` is going to initialize an application with symfony. Be sure that you have already started `Proxifier` 
-> client. Based on the feature branch you selected, `make init` will initialize `symfony 5.4` in `main` branch, and 
+> `make init` is going to initialize an application with symfony. Be sure that you have already started `Proxifier`
+> client. Based on the feature branch you selected, `make init` will initialize `symfony 5.4` in `main` branch, and
 > `symfony 6` in `php-8` feature branch.
 ```
 cd starter-symfony-docker
-
-// switch to main branch: PHP7 and Symfony 5.4 skeleton project 
+// switch to main branch: PHP7 and Symfony 5.4
 git checkout main
 make init
 make start
 
 
-// switch to php-8 branch: PHP8 and Symfony 6 skeleton project
+// switch to php-8 branch: PHP8 and Symfony 6
 git checkout php-8
 make init
 make start
 
-// How to use another invidual symfony project
-// for example: use the symfony demo project (https://github.com/symfony/demo.git), that requires PHP8
+// ⚠️ How to use another invidual symfony project
+// for example: use the symfony demo web project: https://github.com/symfony/demo.git
 git stash
 git checkout php-8
 rm -rf app/.* app/*
@@ -61,31 +60,6 @@ go to [http://localhost](http://localhost)
 png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main
 &resolveLfs=true&%24format=octetStream&api-version=5.0" alt="symfony 5" width="800px">
 
-## 🎮 Scripts & Command
-Type `make` in terminal
-
-```bash
-# shellcheck disable=SC2046
-project
- init                                        init symfony project
- start                                       start the application
-db
- db-reset                                    reset the db
- db-clean                                    clean the db
- db-migrate                                  doctrine migrate
-docker
- docker-clean                                clean up all docker resource
-```
-## xdebug
-To start xdebug with any request, change the boolean to `yes` like the following
-```bash
-xdebug.start_with_request = no
-```
-then rebuild the image and docker
-```bash
-make docker-clean
-```
-
 ## 🔥 Problems
 Check the VPN configuration and `proxifier`, if you have the following SSL certificate problem.
 ```bash
@@ -101,5 +75,3 @@ Creating a "symfony/skeleton" project at "./"
 
 ## Maintainer
 [xun.zhou@mail.schwarz](https://vikbert.github.io/)
-
-## PR welcome

@@ -38,4 +38,4 @@ docker-clean: ## clean up all docker resource
 	docker image prune -f
 	docker volume prune -f
 	docker network prune -f
-	docker rmi base-alpine-php:7.4 -f
+	docker rmi base-alpine-php:8.0 -f
