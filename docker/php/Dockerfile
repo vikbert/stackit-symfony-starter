@@ -1,31 +1,38 @@
-FROM alpine:3.14
+FROM alpine:3.15.0
 
 RUN apk --no-cache add \
-    curl \
-    nginx \
     php8 \
+    php8-apcu \
     php8-ctype \
     php8-curl \
     php8-dom \
+    php8-fileinfo \
     php8-fpm \
-    php8-gd \
-    php8-intl \
     php8-iconv \
+    php8-intl \
     php8-json \
     php8-mbstring \
-    php8-pdo_pgsql \
-    php8-pdo_sqlite \
-    php8-mysqli \
     php8-opcache \
     php8-openssl \
+    php8-pcntl \
+    php8-pdo \
+    php8-pdo_pgsql \
+    php8-pgsql \
     php8-phar \
+    php8-posix \
     php8-session \
-    php8-tokenizer \
-    php8-xml \
-    php8-xmlreader \
-    php8-xmlwriter \
     php8-simplexml \
+    php8-tokenizer \
+    php8-xdebug \
+    php8-xml \
+    php8-xmlwriter \
     php8-zlib \
+    make \
+    nano \
+    htop \
+    curl \
+    openrc \
+    nginx \
     supervisor
 
 # Create symlink so programs depending on `php` still function
@@ -34,14 +41,14 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN composer self-update --2 && rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
 # Configure nginx
-COPY php8-config/nginx.conf /etc/nginx/nginx.conf
+COPY config/nginx.conf /etc/nginx/nginx.conf
 
 # Configure PHP-FPM
-COPY php8-config/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
-COPY php8-config/php.ini /etc/php8/conf.d/custom.ini
+COPY config/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
+COPY config/php.ini /etc/php8/conf.d/custom.ini
 
 # Configure supervisord
-COPY php8-config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Setup document root
 RUN mkdir -p /var/www
