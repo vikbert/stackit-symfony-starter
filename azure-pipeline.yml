@@ -1,0 +1,55 @@
+trigger:
+  - releases/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  appDirectory: '/var/www/app'
+  dockerLogDirectory: '/var/www/app/var/log'
+  hostBuildResult: '$(system.defaultWorkingDirectory)/build-result'
+  dockerConfigCI: 'docker-compose.ci.yml'
+
+steps:
+  - script: docker-compose -f $(dockerConfigCI) build && docker-compose -f $(dockerConfigCI) up -d
+    displayName: 'Build docker environment'
+
+  - script: docker-compose -f $(dockerConfigCI) exec -T php composer global require hirak/prestissimo
+    displayName: 'Optimize environment'
+
+  - script: docker-compose -f $(dockerConfigCI) exec -T php composer install --no-interaction --prefer-dist
+    displayName: 'Install PHP dependencies'
+
+  - script: docker-compose -f $(dockerConfigCI) exec -T php bin/console cache:warmup --env=test
+    displayName: 'Cache warmup'
+
+  - script: sudo chmod -R 777 $(system.defaultWorkingDirectory)/app/var/log $(system.defaultWorkingDirectory)/logs
+    displayName: 'Adapt access rights for logs on host'
+
+  - script: docker-compose -f $(dockerConfigCI) exec -T php chmod -R 777 var files
+    displayName: 'Adapt access rights in docker'
+
+  - script: ./health_check.sh
+    displayName: 'Wait for application to be ready'
+
+  - script: sudo chmod -R 777 $(system.defaultWorkingDirectory)/app/var/log $(system.defaultWorkingDirectory)/logs
+    displayName: 'Adapt access rights for logs on host again'
+
+  - script: sudo chmod -R 777 $(system.defaultWorkingDirectory)/app/var/log $(system.defaultWorkingDirectory)/logs
+    displayName: 'Adapt access rights for logs on host again'
+
+  - script: sudo chmod -R 777 $(system.defaultWorkingDirectory)/app/var
+    displayName: 'Adapt access rights on host'
+
+  - script: docker cp $(docker-compose -f $(dockerConfigCI) ps -q php):$(dockerLogDirectory) $(hostBuildResult)
+    displayName: 'Copy files from php container to host'
+    condition: always()
+
+  - publish: $(system.defaultWorkingDirectory)
+    condition: succeeded()
+    artifact: BuildArtifacts
+
+  - script: 'echo 1>&2'
+    failOnStderr: true
+    displayName: 'If above is partially succeeded, then fail build'
+    condition: eq(variables['Agent.JobStatus'], 'SucceededWithIssues')
