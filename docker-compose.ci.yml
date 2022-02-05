@@ -7,5 +7,3 @@ services:
     ports: [ "80:8080" ]
     volumes:
       - ./app:/var/www:cached
-
-
