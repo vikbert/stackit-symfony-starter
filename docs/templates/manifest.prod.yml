@@ -1,0 +1,12 @@
+---
+applications:
+  - name: symfony
+    instances: 1
+    memory: 1G
+    disk_quota: 2G
+    path: .
+    buildpacks:
+      - https://github.com/cloudfoundry/php-buildpack.git#v4.4.52
+    env:
+      APP_ENV: prod
+      SYMFONY_ENV: prod
