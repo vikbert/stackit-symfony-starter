@@ -1,0 +1,397 @@
+/*
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://www.monotype.com/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#symfony {
+  width: 230px;
+}
+
+#stackit {
+  width: 230px;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: "MuseoSansW05", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.56;
+  color: #424242;
+  text-align: left;
+  background-color: #fff;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #045462;
+  text-decoration: none;
+  background-color: transparent;
+}
+a:hover {
+  color: #011519;
+  text-decoration: none;
+}
+
+a:not([href]):not([class]) {
+  color: inherit;
+  text-decoration: none;
+}
+a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+.mb-4 {
+  margin-bottom: 2rem !important;
+}
+
+.m-5 {
+  margin: 2.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 2.5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 2.5rem !important;
+}
+
+.mt-7 {
+  margin-top: 3.5rem !important;
+}
+
+
+.px-2 {
+  padding-right: 1rem !important;
+}
+
+
+.px-2 {
+  padding-left: 1rem !important;
+}
+
+
+.mx-auto {
+  margin-right: auto !important;
+}
+
+
+.mx-auto {
+  margin-left: auto !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -600px 0;
+  }
+  100% {
+    background-position: 700px 0;
+  }
+}
+
+.icon {
+  --color-1: currentColor;
+  --color-2: currentColor;
+  display: inline-flex;
+  align-items: center;
+  line-height: normal;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+}
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+@keyframes checkIconFadeIn {
+  0% {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath d='M8.177 21.993L0 12.582l1.15-1 7 8.056L22.827 2.006 24 2.981z' data-name='check' fill='%23f4f4f4'/%3E%3C/svg%3E");
+  }
+  100% {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath d='M8.177 21.993L0 12.582l1.15-1 7 8.056L22.827 2.006 24 2.981z' data-name='check' fill='%234ab54f'/%3E%3C/svg%3E");
+  }
+}
+@keyframes messageFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.56;
+}
+
+h1 {
+  font-size: 2.125rem;
+  line-height: 1.5;
+}
+
+a {
+  color: #045462;
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  color: #2a6e7a;
+}
+a:hover svg {
+  --color-1: #2a6e7a;
+  --color-2: #2a6e7a;
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "MuseoSansW05";
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-300.eot?#iefix);
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-300.eot?#iefix) format("eot"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-300.woff2) format("woff2"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-300.woff) format("woff"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-300.ttf) format("truetype");
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "MuseoSansW05";
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-500.eot?#iefix);
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-500.eot?#iefix) format("eot"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-500.woff2) format("woff2"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-500.woff) format("woff"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-500.ttf) format("truetype");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "MuseoSansW05";
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-700.eot?#iefix);
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-700.eot?#iefix) format("eot"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-700.woff2) format("woff2"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-700.woff) format("woff"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-700.ttf) format("truetype");
+}
+
+@font-face {
+  font-weight: 900;
+  font-family: "MuseoSansW05";
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-900.eot?#iefix);
+  src: url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-900.eot?#iefix) format("eot"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-900.woff2) format("woff2"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-900.woff) format("woff"), url(https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/museo/MuseoSansW05-900.ttf) format("truetype");
+}
+
+body {
+  font-size: 16px;
+  font-display: swap;
+  vertical-align: baseline;
+}
+
+@font-face {
+  font-family: "OCRAStd";
+  src: url("https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/ocr/ocrastd.eot?#iefix");
+  src: url("https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/ocr/ocrastd.eot?#iefix") format("eot"), url("https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/ocr/ocrastd.woff2") format("woff2"), url("https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/ocr/ocrastd.woff") format("woff"), url("https://cdn.apps.01.cf.eu01.stackit.cloud/fonts/ocr/ocrastd.ttf") format("truetype");
+}
+
+.btn {
+  border: none;
+  transition: background-color 50ms ease-in, border 50ms ease-in, color 50ms ease-in;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #f4f4f4;
+  border-radius: 0.1875rem;
+  line-height: 1rem;
+  color: #424242;
+}
+.btn svg {
+  --color-1: #424242;
+  --color-2: #424242;
+}
+.btn::before {
+  content: " ";
+  transition: all 200ms;
+  width: 0;
+  height: 0;
+  background-size: 0 1rem;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: #ececec;
+  color: #424242;
+}
+.btn:hover svg {
+  --color-1: #424242;
+  --color-2: #424242;
+}
+.btn:disabled {
+  background-color: #f4f4f4;
+  color: #c6c6c6;
+  cursor: default;
+}
+.btn:disabled svg {
+  --color-1: #c6c6c6;
+  --color-2: #c6c6c6;
+}
+.btn.secondary {
+  color: #045462;
+  background-color: #f8ec17;
+}
+.btn.secondary svg {
+  --color-1: #045462;
+  --color-2: #045462;
+}
+.btn.secondary:hover {
+  background-color: #eee207;
+  color: #045462;
+}
+.btn.secondary:hover svg {
+  --color-1: #045462;
+  --color-2: #045462;
+}
+.btn.secondary:disabled {
+  background-color: #f4f4f4;
+  color: #c6c6c6;
+  cursor: default;
+}
+.btn.secondary:disabled svg {
+  --color-1: #c6c6c6;
+  --color-2: #c6c6c6;
+}
+
+.mw-text {
+  max-width: 70ch;
+}
+/*
+ 	CUSTOM STACKIT STYLES
+*/
+
+
+.btn:active:focus {
+  outline: none;
+}
+
+
+.btn:active:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -600px 0;
+  }
+  100% {
+    background-position: 700px 0;
+  }
+}
+@keyframes rotate {
+  8% {
+    transform: rotate(0deg);
+  }
+  42% {
+    transform: rotate(-180deg);
+  }
+  58% {
+    transform: rotate(-180deg);
+  }
+  92% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes open {
+  0% {
+    transform: translateX(0%);
+  }
+  18% {
+    transform: translateX(calc(15% * var(--invert)));
+  }
+  52% {
+    transform: translateX(calc(15% * var(--invert)));
+  }
+  70% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.content {
+  margin-top: 6rem;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
