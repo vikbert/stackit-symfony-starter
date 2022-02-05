@@ -21,21 +21,25 @@ png&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0
 
 ---
 
-## 🚀 Starting started
+## 🚀 Starting started on STACKIT
+WIP
+
+
+## 🚀 Starting started on LOCAL
 read the official documentation to learn how to install symfony <https://symfony.com/download>.
 > `make init` is going to initialize an application with symfony. Be sure that you have already started `Proxifier`
-> client. Based on the feature branch you selected, `make init` will initialize `symfony 5.4` in `main` branch, and
-> `symfony 6` in `php-8` feature branch.
+> client. Based on the feature branch you selected, `make init` will initialize `symfony 6` in `main` branch, and
+> `symfony 5` in `php-7` feature branch.
 ```
 cd starter-symfony-docker
-// switch to main branch: PHP7 and Symfony 5.4
+// switch to main branch: PHP8 and Symfony 6
 git checkout main
 make init
 make start
 
 
-// switch to php-8 branch: PHP8 and Symfony 6
-git checkout php-8
+// switch to php-7 branch: PHP7 and Symfony 5
+git checkout php-7
 make init
 make start
 
