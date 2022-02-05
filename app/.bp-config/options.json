@@ -1,9 +1,9 @@
 {
-    "COMPOSER_INSTALL_OPTIONS": [
-        "--no-dev",
-        "--no-scripts"
-    ],
-    "COMPOSER_VENDOR_DIR": "vendor",
-    "WEBDIR": "public",
-    "WEB_SERVER": "nginx"
+  "COMPOSER_INSTALL_OPTIONS": [
+    "--no-dev",
+    "--no-scripts"
+  ],
+  "COMPOSER_VENDOR_DIR": "vendor",
+  "WEBDIR": "public",
+  "WEB_SERVER": "nginx"
 }

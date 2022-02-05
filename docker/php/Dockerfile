@@ -44,7 +44,7 @@ RUN composer self-update --2 && rm -rf /var/cache/apk/* && rm -rf /tmp/*
 COPY config/nginx.conf /etc/nginx/
 COPY config/fpm.conf /etc/php8/php-fpm.d/
 COPY config/supervisord.conf /etc/supervisor/conf.d/
-COPY init/php.ini /etc/php8/conf.d/
+COPY ini/php.ini /etc/php8/conf.d/
 
 # Make sure files/folders needed by the processes are accessable when they run under the nobody user
 RUN mkdir -p /var/www && \
