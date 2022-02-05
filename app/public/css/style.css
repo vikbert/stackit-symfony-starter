@@ -11,7 +11,8 @@ Imaging with any questions regarding Web Fonts:  http://www.monotype.com/
 }
 
 #symfony {
-  width: 230px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 #stackit {
