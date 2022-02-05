@@ -41,31 +41,21 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN composer self-update --2 && rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
 # Configure nginx
-COPY config/nginx.conf /etc/nginx/nginx.conf
-
-# Configure PHP-FPM
-COPY config/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
-COPY config/php.ini /etc/php8/conf.d/custom.ini
-
-# Configure supervisord
-COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-# Setup document root
-RUN mkdir -p /var/www
+COPY config/nginx.conf /etc/nginx/
+COPY config/fpm.conf /etc/php8/php-fpm.d/
+COPY config/supervisord.conf /etc/supervisor/conf.d/
+COPY init/php.ini /etc/php8/conf.d/
 
 # Make sure files/folders needed by the processes are accessable when they run under the nobody user
-RUN chown -R nobody.nobody /var/www && \
+RUN mkdir -p /var/www && \
+    chown -R nobody.nobody /var/www && \
     chown -R nobody.nobody /run && \
     chown -R nobody.nobody /var/lib/nginx && \
     chown -R nobody.nobody /var/log/nginx
 
 # Switch to use a non-root user from here on
 USER nobody
-
-# Add application
 WORKDIR /var/www
-
-# Expose the port nginx is reachable on
 EXPOSE 8080
 
 # Let supervisord start nginx & php-fpm

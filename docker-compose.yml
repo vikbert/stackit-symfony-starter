@@ -2,22 +2,12 @@ version: '3'
 
 services:
   php:
-      build: ./docker/php
-      image: stackit-php:8.0
-      ports: [80:8080]
-      extra_hosts:
-          - "host.docker.internal:host-gateway"
-      volumes:
-          - ./app:/var/www:cached
-#
-#  db:
-#    build: ./docker/db
-#    image: base-db:latest
-#    environment:
-#      POSTGRES_USER: symfony
-#      POSTGRES_PASSWORD: symfony
-#      POSTGRES_DB: symfony
-#    ports: [2345:5432]
-#    restart: always
+    build: ./docker/php
+    image: stackit-php:8.0
+    ports: [ 80:8080 ]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./app:/var/www:cached
 
 
