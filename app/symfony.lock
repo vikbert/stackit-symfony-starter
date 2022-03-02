@@ -1,4 +1,31 @@
 {
+    "elasticsearch/elasticsearch": {
+        "version": "v7.17.0"
+    },
+    "ezimuel/guzzlestreams": {
+        "version": "3.0.1"
+    },
+    "ezimuel/ringphp": {
+        "version": "1.2.0"
+    },
+    "friendsofsymfony/elastica-bundle": {
+        "version": "6.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "5.0",
+            "ref": "46c9cd2c1e07f0fcfd97e96f12b03b2e0845c4cd"
+        },
+        "files": [
+            "config/packages/fos_elastica.yaml"
+        ]
+    },
+    "nyholm/dsn": {
+        "version": "2.0.1"
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v3.5.2"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -10,6 +37,12 @@
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "react/promise": {
+        "version": "v2.9.0"
+    },
+    "ruflin/elastica": {
+        "version": "7.1.4"
     },
     "symfony/asset": {
         "version": "v5.4.3"
@@ -113,6 +146,12 @@
     },
     "symfony/polyfill-php81": {
         "version": "v1.24.0"
+    },
+    "symfony/property-access": {
+        "version": "v6.0.5"
+    },
+    "symfony/property-info": {
+        "version": "v6.0.3"
     },
     "symfony/routing": {
         "version": "5.4",
