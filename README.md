@@ -14,8 +14,7 @@
     </a>
   </p>
 
-  <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,
- dpr_1/i0yzqcpk0emjh8l8vm23" width="800"/>
+  <img src="https://xrgo.io/wp-content/uploads/STACKIT_CLOUD_POS_CMYK-1024x226.png" width="800"/>
 </div>
 
 ---
