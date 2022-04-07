@@ -13,6 +13,9 @@
       <img src="https://img.shields.io/badge/License-Apache-brightgreen.svg?style=flat-square" alt="Apache License">
     </a>
   </p>
+
+  <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,
+ dpr_1/i0yzqcpk0emjh8l8vm23" width="800"/>
 </div>
 
 ---
