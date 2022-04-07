@@ -33,14 +33,20 @@ STACKIT customer can use Symfony on STACKIT easily as possible.
 
 More sample projects like this can be found on <https://github.com/cloudfoundry-samples>
 
-## How to use
-1. checkout the project
+## Preparation
+checkout the project
 ```bash
 git clone https://github.com/vikbert/stackit-symfony-starter.git
 cd stackit-symfony-starter/app
 ```
 
-2. create a demo project named *myapp* on `portal.stackit`
+## How to start on local
+```bash
+make start
+```
+
+## How to deploy to STACKIT
+create a demo project named *myapp* on `portal.stackit`
 ```bash
 cf login
 cf target -s prod
