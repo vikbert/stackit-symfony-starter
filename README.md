@@ -17,7 +17,7 @@
 
 ---
 
-## 🚀 Starting started on STACKIT
+## Starting started on STACKIT
 
 STACKIT was founded in 2018 to drive the digital transformation within the Schwarz Group with its own 
 high-performance cloud and colocation infrastructure. STACKIT is a strategic project that supports the 
