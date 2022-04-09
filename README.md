@@ -45,7 +45,7 @@ cd stackit-symfony-starter/app
 make start
 ```
 
-## How to deploy to STACKIT
+## Quick Deploy to STACKIT
 create a demo project named *myapp* on `portal.stackit`
 ```bash
 cf login
@@ -53,6 +53,8 @@ cf target -s prod
 cf push myapp -f manifest.prod.yml
 # it should deploy the current project source code on mayapp on STACKIT.
 ```
+
+To deploy a project in another language, check the sample project on <https://github.com/cloudfoundry-samples>
 
 ## Default configurations
 - `manifest.prod.xml`: minimal config for hardware and build package
