@@ -14,7 +14,7 @@
     </a>
   </p>
 
-  <img src="https://xrgo.io/wp-content/uploads/STACKIT_CLOUD_POS_CMYK-1024x226.png" width="400"/>
+  <img src="https://xrgo.io/wp-content/uploads/STACKIT_CLOUD_POS_CMYK-1024x226.png" width="300"/>
 </div>
 
 ---
