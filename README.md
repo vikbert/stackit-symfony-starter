@@ -15,6 +15,8 @@
   </p>
 
   <img src="https://xrgo.io/wp-content/uploads/STACKIT_CLOUD_POS_CMYK-1024x226.png" width="300"/>
+  <br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Symfony2.svg/1280px-Symfony2.svg.png" width="300"/>
 </div>
 
 ---
